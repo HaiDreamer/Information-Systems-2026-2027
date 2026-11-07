@@ -1,5 +1,5 @@
 USTH Information Systems 2026
 =============================
 
-* Your name here
-* Your ID here
+* Nguyen Huy Hai
+* 2640088
