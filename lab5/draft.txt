@@ -1,0 +1,24 @@
+employee db satisfy
+    1NF (First Normal Form)
+    - Each column contains atomic (single) values.
+    - There are no repeating groups.
+    - Each row can be uniquely identified.
+    - In this database, we have all six tables (employees, departments, dept_emp, dept_manager, salaries, titles) 
+    contain atomic values. Each table has a primary key to uniquely identify its records.
+    2NF (Second Normal Form)
+    - satisfy 1NF
+    - Every non-key attribute depends on the entire primary key (no partial dependency).
+    Tables with a single-column primary key (employees, departments) automatically satisfy 2NF.
+    ables with composite primary keys (dept_emp, dept_manager, salaries, titles) have non-key attributes that depend on the entire composite key.
+    3NF (Third Normal Form)
+    - satisfy 2NF
+    - There are no transitive dependencies (non-key attributes must not depend on other non-key attributes).
+    - Check each table:
+        Table	Functional dependency
+        employees	emp_no → birth_date, first_name, last_name, gender, hire_date
+        departments	dept_no → dept_name
+        dept_emp	(emp_no, dept_no) → from_date, to_date
+        dept_manager	(emp_no, dept_no) → from_date, to_date
+        salaries	(emp_no, from_date) → salary, to_date
+        titles	(emp_no, title, from_date) → to_date
+    + In each table, non-key attributes depend directly on the primary key. There are no transitive dependencies among non-key attributes.
